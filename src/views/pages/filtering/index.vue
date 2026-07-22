@@ -72,7 +72,7 @@
 					background
 					@size-change="onHandleSizeChange"
 					@current-change="onHandleCurrentChange"
-					:page-sizes="[10, 20, 30]"
+					:page-sizes="[20, 50, 100, 200]"
 					:current-page="tableData.param.pageNum"
 					:page-size="tableData.param.pageSize"
 					layout="total, sizes, prev, pager, next, jumper"
@@ -102,7 +102,7 @@ export default defineComponent({
 				loading: false,
 				param: {
 					pageNum: 1,
-					pageSize: 10,
+					pageSize: 20,
 				},
 			},
 		});

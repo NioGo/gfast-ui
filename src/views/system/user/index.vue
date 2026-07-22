@@ -95,19 +95,19 @@
               </el-form-item>
             </el-form>
           </div>
-          <el-table :data="tableData.data" style="width: 100%" @selection-change="handleSelectionChange">
-            <el-table-column type="selection" width="55" align="center" />
-            <el-table-column type="index" label="序号" width="60" />
-            <el-table-column prop="userName" label="账户名称" show-overflow-tooltip></el-table-column>
-            <el-table-column prop="userNickname" label="用户昵称" show-overflow-tooltip></el-table-column>
-            <el-table-column prop="dept.deptName" label="部门" show-overflow-tooltip></el-table-column>
-            <el-table-column label="角色" align="center" prop="roleInfo" :show-overflow-tooltip="true" >
+          <el-table border :data="tableData.data" style="width: 100%" @selection-change="handleSelectionChange">
+            <el-table-column resizable type="selection" width="55" align="center" />
+            <el-table-column resizable type="index" label="序号" width="60" />
+            <el-table-column resizable prop="userName" label="账户名称" show-overflow-tooltip></el-table-column>
+            <el-table-column resizable prop="userNickname" label="用户昵称" show-overflow-tooltip></el-table-column>
+            <el-table-column resizable prop="dept.deptName" label="部门" show-overflow-tooltip></el-table-column>
+            <el-table-column resizable label="角色" align="center" prop="roleInfo" :show-overflow-tooltip="true" >
               <template #default="scope">
                 <span v-for="(item,index) of scope.row.roleInfo" :key="'role-'+index">   {{item.name+'   '}}   </span>
               </template>
             </el-table-column>
-            <el-table-column prop="mobile" label="手机号" show-overflow-tooltip></el-table-column>
-            <el-table-column prop="userStatus" label="用户状态" show-overflow-tooltip>
+            <el-table-column resizable prop="mobile" label="手机号" show-overflow-tooltip></el-table-column>
+            <el-table-column resizable prop="userStatus" label="用户状态" show-overflow-tooltip>
               <template #default="scope">
                 <el-switch
                     v-model="scope.row.userStatus"
@@ -120,8 +120,8 @@
                 </el-switch>
               </template>
             </el-table-column>
-            <el-table-column prop="createdAt" label="创建时间" show-overflow-tooltip></el-table-column>
-            <el-table-column label="操作" width="200">
+            <el-table-column resizable prop="createdAt" label="创建时间" show-overflow-tooltip></el-table-column>
+            <el-table-column resizable label="操作" width="200">
               <template #default="scope">
                 <el-button size="small" text type="primary" @click="onOpenEditUser(scope.row)">修改</el-button>
                 <el-button size="small" text type="primary" @click="onRowDel(scope.row)">删除</el-button>
@@ -215,7 +215,7 @@ export default defineComponent({
 				loading: false,
 				param: {
           pageNum: 1,
-          pageSize: 10,
+          pageSize: 20,
           deptId:'',
           mobile:'',
           status:'',

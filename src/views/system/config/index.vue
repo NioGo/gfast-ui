@@ -75,16 +75,16 @@
           </el-form-item>
         </el-form>
       </div>
-      <el-table :data="tableData.data" style="width: 100%" @selection-change="handleSelectionChange">
-        <el-table-column type="selection" width="55" align="center" />
-        <el-table-column label="参数主键" align="center" prop="configId" />
-        <el-table-column label="参数名称" align="center" prop="configName" :show-overflow-tooltip="true" />
-        <el-table-column label="参数键名" align="center" prop="configKey" :show-overflow-tooltip="true" />
-        <el-table-column label="参数键值" align="center" prop="configValue" />
-        <el-table-column label="系统内置" align="center" prop="configType" :formatter="typeFormat" />
-        <el-table-column label="备注" align="center" prop="remark" :show-overflow-tooltip="true" />
-        <el-table-column label="创建时间" align="center" prop="createdAt" width="180" />
-        <el-table-column label="操作" width="200">
+      <el-table border :data="tableData.data" style="width: 100%" @selection-change="handleSelectionChange">
+        <el-table-column resizable type="selection" width="55" align="center" />
+        <el-table-column resizable label="参数主键" align="center" prop="configId" />
+        <el-table-column resizable label="参数名称" align="center" prop="configName" :show-overflow-tooltip="true" />
+        <el-table-column resizable label="参数键名" align="center" prop="configKey" :show-overflow-tooltip="true" />
+        <el-table-column resizable label="参数键值" align="center" prop="configValue" />
+        <el-table-column resizable label="系统内置" align="center" prop="configType" :formatter="typeFormat" />
+        <el-table-column resizable label="备注" align="center" prop="remark" :show-overflow-tooltip="true" />
+        <el-table-column resizable label="创建时间" align="center" prop="createdAt" width="180" />
+        <el-table-column resizable label="操作" width="200">
           <template #default="scope">
             <el-button size="small" text type="primary" @click="onOpenEditDic(scope.row)">修改</el-button>
             <el-button size="small" text type="primary" @click="onRowDel(scope.row)">删除</el-button>
@@ -154,7 +154,7 @@ export default defineComponent({
         param: {
           dateRange:[],
           pageNum: 1,
-          pageSize: 10,
+          pageSize: 20,
           configName:'',
           configKey:'',
           configType:''

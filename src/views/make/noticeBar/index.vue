@@ -27,21 +27,21 @@
 		</el-card>
 
 		<el-card shadow="hover" header="滚动通知栏：参数" class="mt15">
-			<el-table :data="tableData" style="width: 100%">
-				<el-table-column prop="a1" label="参数"> </el-table-column>
-				<el-table-column prop="a2" label="说明"> </el-table-column>
-				<el-table-column prop="a3" label="类型"> </el-table-column>
-				<el-table-column prop="a4" label="可选值"> </el-table-column>
-				<el-table-column prop="a5" label="默认值"> </el-table-column>
+			<el-table border :data="tableData" style="width: 100%">
+				<el-table-column resizable prop="a1" label="参数"> </el-table-column>
+				<el-table-column resizable prop="a2" label="说明"> </el-table-column>
+				<el-table-column resizable prop="a3" label="类型"> </el-table-column>
+				<el-table-column resizable prop="a4" label="可选值"> </el-table-column>
+				<el-table-column resizable prop="a5" label="默认值"> </el-table-column>
 			</el-table>
 		</el-card>
 
 		<el-card shadow="hover" header="图标选择器(宽度自动)：事件" class="mt15">
-			<el-table :data="tableData1" style="width: 100%">
-				<el-table-column prop="a1" label="事件名称"> </el-table-column>
-				<el-table-column prop="a2" label="说明"> </el-table-column>
-				<el-table-column prop="a3" label="类型"> </el-table-column>
-				<el-table-column prop="a4" label="回调参数"> </el-table-column>
+			<el-table border :data="tableData1" style="width: 100%">
+				<el-table-column resizable prop="a1" label="事件名称"> </el-table-column>
+				<el-table-column resizable prop="a2" label="说明"> </el-table-column>
+				<el-table-column resizable prop="a3" label="类型"> </el-table-column>
+				<el-table-column resizable prop="a4" label="回调参数"> </el-table-column>
 			</el-table>
 		</el-card>
 	</div>

@@ -37,37 +37,37 @@
           </el-form-item>
         </el-form>
 			</div>
-			<el-table :data="menuTableData" style="width: 100%" row-key="path" :tree-props="{ children: 'children', hasChildren: 'hasChildren' }">
-				<el-table-column label="菜单名称" show-overflow-tooltip>
+			<el-table border :data="menuTableData" style="width: 100%" row-key="path" :tree-props="{ children: 'children', hasChildren: 'hasChildren' }">
+				<el-table-column resizable label="菜单名称" show-overflow-tooltip>
 					<template #default="scope">
 						<SvgIcon :name="scope.row.icon" />
 						<span class="ml10">{{ scope.row.title }}</span>
 					</template>
 				</el-table-column>
-				<el-table-column prop="path" label="路由路径" show-overflow-tooltip></el-table-column>
-				<el-table-column label="组件路径" show-overflow-tooltip>
+				<el-table-column resizable prop="path" label="路由路径" show-overflow-tooltip></el-table-column>
+				<el-table-column resizable label="组件路径" show-overflow-tooltip>
 					<template #default="scope">
 						<span>{{ scope.row.component }}</span>
 					</template>
 				</el-table-column>
-				<el-table-column label="api接口" show-overflow-tooltip>
+				<el-table-column resizable label="api接口" show-overflow-tooltip>
 					<template #default="scope">
 						<span>{{ scope.row.name }}</span>
 					</template>
 				</el-table-column>
-				<el-table-column label="排序" show-overflow-tooltip width="80">
+				<el-table-column resizable label="排序" show-overflow-tooltip width="80">
 					<template #default="scope">
 						{{ scope.row.weigh }}
 					</template>
 				</el-table-column>
-				<el-table-column label="类型" show-overflow-tooltip width="80">
+				<el-table-column resizable label="类型" show-overflow-tooltip width="80">
 					<template #default="scope">
 						<el-tag :type="scope.row.menuType===0?'danger':(scope.row.menuType===1?'success':'warning')"
                     size="small">{{scope.row.menuType===0?'目录':(scope.row.menuType===1?'菜单':'按钮') }}</el-tag>
 					</template>
 				</el-table-column>
-        <el-table-column prop="isHide" label="显示状态" :formatter="formatIsHide" width="120"></el-table-column>
-				<el-table-column label="操作"  width="240">
+        <el-table-column resizable prop="isHide" label="显示状态" :formatter="formatIsHide" width="120"></el-table-column>
+				<el-table-column resizable label="操作"  width="240">
 					<template #default="scope">
 						<el-button v-if="scope.row.menuType!==2" size="small" text type="primary" @click="onOpenAddMenu(scope.row)" v-auth="'api/v1/system/menu/add'">新增</el-button>
 						<el-button size="small" text type="primary" @click="onOpenEditMenu(scope.row)" v-auth="'api/v1/system/menu/update'">修改</el-button>

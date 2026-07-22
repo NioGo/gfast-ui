@@ -35,18 +35,6 @@
               <el-option label="禁用"  :value="0"/>
             </el-select>
           </el-form-item>
-          <el-form-item label="创建时间" prop="dateRange">
-            <el-date-picker
-                v-model="tableData.param.dateRange"
-                size="default"
-                style="width: 240px"
-                value-format="YYYY-MM-DD"
-                type="daterange"
-                range-separator="-"
-                start-placeholder="开始日期"
-                end-placeholder="结束日期"
-            ></el-date-picker>
-          </el-form-item>
           <el-form-item>
             <el-button size="default" type="primary" class="ml10" @click="typeList">
               <el-icon>
@@ -64,37 +52,37 @@
               <el-icon>
                 <ele-FolderAdd />
               </el-icon>
-              新增字典
+              新增
             </el-button>
             <el-button size="default" type="danger" class="ml10" @click="onRowDel(null)">
               <el-icon>
                 <ele-Delete />
               </el-icon>
-              删除字典
+              删除
             </el-button>
           </el-form-item>
         </el-form>
 			</div>
-			<el-table :data="tableData.data" style="width: 100%" @selection-change="handleSelectionChange">
-        <el-table-column type="selection" width="55" align="center" />
-        <el-table-column label="字典ID" align="center" prop="dictId" width="120"/>
-        <el-table-column label="字典名称" align="center" prop="dictName" :show-overflow-tooltip="true" />
-        <el-table-column label="字典类型" align="center" :show-overflow-tooltip="true">
+			<el-table border :data="tableData.data" style="width: 100%" @selection-change="handleSelectionChange">
+        <el-table-column resizable type="selection" width="55" align="center" />
+        <el-table-column resizable label="字典ID" align="center" prop="dictId" width="120"/>
+        <el-table-column resizable label="字典名称" align="center" prop="dictName" :show-overflow-tooltip="true" />
+        <el-table-column resizable label="字典类型" align="center" :show-overflow-tooltip="true">
           <template #default="scope">
             <router-link :to="'/system/dict/data/list/' + scope.row.dictType" class="link-type">
               <span>{{ scope.row.dictType }}</span>
             </router-link>
           </template>
         </el-table-column>
-				<el-table-column prop="status" label="字典状态" show-overflow-tooltip>
+				<el-table-column resizable prop="status" label="字典状态" show-overflow-tooltip>
 					<template #default="scope">
 						<el-tag type="success" v-if="scope.row.status">启用</el-tag>
 						<el-tag type="info" v-else>禁用</el-tag>
 					</template>
 				</el-table-column>
-				<el-table-column prop="remark" label="字典描述" show-overflow-tooltip></el-table-column>
-				<el-table-column prop="createdAt" label="创建时间" show-overflow-tooltip width="180"></el-table-column>
-				<el-table-column label="操作" width="200">
+				<el-table-column resizable prop="remark" label="字典描述" show-overflow-tooltip></el-table-column>
+				<el-table-column resizable prop="createdAt" label="创建时间" show-overflow-tooltip width="180"></el-table-column>
+				<el-table-column resizable label="操作" width="200">
 					<template #default="scope">
 						<el-button size="small" text type="primary" @click="onOpenEditDic(scope.row)">修改</el-button>
 						<el-button size="small" text type="primary" @click="onRowDel(scope.row)">删除</el-button>
@@ -161,7 +149,7 @@ export default defineComponent({
 				loading: false,
 				param: {
 					pageNum: 1,
-					pageSize: 10,
+					pageSize: 20,
           dictName:'',
           dictType:'',
           status:'',

@@ -8,7 +8,7 @@
                             <span>运行资源</span>
                         </div>
                     </template>
-                    <div class=" el-table--enable-row-hover el-table--medium">
+                    <div class="el-table--enable-row-hover el-table--medium">
                         <table cellspacing="0" style="width: 100%;">
                             <tbody>
                             <tr>

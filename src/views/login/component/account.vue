@@ -105,8 +105,8 @@ export default defineComponent({
 		const state = reactive({
 			isShowPassword: false,
 			ruleForm: {
-        username: 'demo',
-				password: '123456',
+        username: '',
+				password: '',
         verifyCode: '',
         verifyKey:''
 			},

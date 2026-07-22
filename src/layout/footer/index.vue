@@ -1,8 +1,8 @@
 <template>
   <div class="layout-footer mt15" v-show="isDelayFooter">
     <div class="layout-footer-warp">
-      <div>Copyright © 2021-2023 g-fast.cn All Rights Reserved.</div>
-      <div class="mt5">云南奇讯科技有限公司版权所有</div>
+      <div>Copyright © 2026 NIO·GO All Rights Reserved.</div>
+      <div class="mt5">NIO·GO版权所有</div>
     </div>
   </div>
 </template>

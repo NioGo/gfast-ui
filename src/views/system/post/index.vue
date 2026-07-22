@@ -37,21 +37,21 @@
           </el-form-item>
         </el-form>
 			</div>
-			<el-table :data="tableData.data" style="width: 100%" @selection-change="handleSelectionChange">
-        <el-table-column type="selection" width="55" align="center" />
-				<el-table-column type="index" label="序号" width="60" />
-				<el-table-column prop="postCode" label="岗位编码" show-overflow-tooltip></el-table-column>
-				<el-table-column prop="postName" label="岗位名称" show-overflow-tooltip></el-table-column>
-				<el-table-column prop="postSort" label="排序" show-overflow-tooltip></el-table-column>
-				<el-table-column prop="status" label="岗位状态" show-overflow-tooltip>
+			<el-table border :data="tableData.data" style="width: 100%" @selection-change="handleSelectionChange">
+        <el-table-column resizable type="selection" width="55" align="center" />
+				<el-table-column resizable type="index" label="序号" width="60" />
+				<el-table-column resizable prop="postCode" label="岗位编码" show-overflow-tooltip></el-table-column>
+				<el-table-column resizable prop="postName" label="岗位名称" show-overflow-tooltip></el-table-column>
+				<el-table-column resizable prop="postSort" label="排序" show-overflow-tooltip></el-table-column>
+				<el-table-column resizable prop="status" label="岗位状态" show-overflow-tooltip>
 					<template #default="scope">
 						<el-tag type="success" v-if="scope.row.status===1">启用</el-tag>
 						<el-tag type="info" v-else>禁用</el-tag>
 					</template>
 				</el-table-column>
-				<el-table-column prop="remark" label="岗位描述" show-overflow-tooltip></el-table-column>
-        <el-table-column prop="createdAt" label="创建时间" show-overflow-tooltip></el-table-column>
-				<el-table-column label="操作" width="200">
+				<el-table-column resizable prop="remark" label="岗位描述" show-overflow-tooltip></el-table-column>
+        <el-table-column resizable prop="createdAt" label="创建时间" show-overflow-tooltip></el-table-column>
+				<el-table-column resizable label="操作" width="200">
 					<template #default="scope">
 						<el-button size="small" text type="primary" @click="onOpenEditPost(scope.row)">修改</el-button>
 						<el-button size="small" text type="primary" @click="onRowDel(scope.row)">删除</el-button>
@@ -118,7 +118,7 @@ export default defineComponent({
           status:'',
           postCode:'',
 					pageNum: 1,
-					pageSize: 10,
+					pageSize: 20,
 				},
 			},
 		});

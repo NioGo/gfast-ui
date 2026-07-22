@@ -95,41 +95,41 @@
           </el-col>
         </el-row>
       </div>
-      <el-table v-loading="loading" :data="tableData.data" @selection-change="handleSelectionChange">
-        <el-table-column type="selection" width="55" align="center" />
-        <el-table-column label="日志编号" align="center" prop="operId"
+      <el-table border v-loading="loading" :data="tableData.data" @selection-change="handleSelectionChange">
+        <el-table-column resizable type="selection" width="55" align="center" />
+        <el-table-column resizable label="日志编号" align="center" prop="operId"
                          min-width="100px"
         />
-        <el-table-column label="系统模块" align="center" prop="title"
+        <el-table-column resizable label="系统模块" align="center" prop="title"
                          min-width="100px"
         />
-        <el-table-column label="请求方式" align="center" prop="requestMethod" :formatter="requestMethodFormat"
+        <el-table-column resizable label="请求方式" align="center" prop="requestMethod" :formatter="requestMethodFormat"
                          min-width="100px"
         />
-        <el-table-column label="操作人员" align="center" prop="operName"
+        <el-table-column resizable label="操作人员" align="center" prop="operName"
                          min-width="100px"
         />
-        <el-table-column label="部门名称" align="center" prop="deptName"
+        <el-table-column resizable label="部门名称" align="center" prop="deptName"
                          min-width="100px"
         />
-        <el-table-column label="请求URL" align="center" prop="operUrl"
+        <el-table-column resizable label="请求URL" align="center" prop="operUrl"
                          min-width="100px"
                          :show-overflow-tooltip="true"
         />
-        <el-table-column label="主机地址" align="center" prop="operIp"
+        <el-table-column resizable label="主机地址" align="center" prop="operIp"
                          min-width="100px"
         />
-        <el-table-column label="操作地点" align="center" prop="operLocation"
+        <el-table-column resizable label="操作地点" align="center" prop="operLocation"
                          min-width="100px"
         />
-        <el-table-column label="操作时间" align="center" prop="operTime"
+        <el-table-column resizable label="操作时间" align="center" prop="operTime"
                          min-width="120px"
         >
           <template #default="scope">
             <span>{{ proxy.parseTime(scope.row.operTime, '{y}-{m}-{d} {h}:{i}:{s}') }}</span>
           </template>
         </el-table-column>
-        <el-table-column label="操作" align="center" class-name="small-padding" min-width="120px" fixed="right">
+        <el-table-column resizable label="操作" align="center" class-name="small-padding" min-width="120px" fixed="right">
           <template #default="scope">
             <el-button
                 size="small"
@@ -222,7 +222,7 @@ export default defineComponent({
         loading: false,
         param: {
           pageNum: 1,
-          pageSize: 10,
+          pageSize: 20,
           title: undefined,
           requestMethod: undefined,
           operName: undefined,

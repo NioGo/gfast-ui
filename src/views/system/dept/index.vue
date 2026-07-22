@@ -28,23 +28,23 @@
           </el-form-item>
         </el-form>
       </div>
-			<el-table
+			<el-table border
 				:data="tableData.data"
 				style="width: 100%"
 				row-key="deptId"
 				default-expand-all
 				:tree-props="{ children: 'children', hasChildren: 'hasChildren' }"
 			>
-				<el-table-column prop="deptName" label="部门名称" show-overflow-tooltip> </el-table-column>
-				<el-table-column prop="status" label="部门状态" show-overflow-tooltip>
+				<el-table-column resizable prop="deptName" label="部门名称" show-overflow-tooltip> </el-table-column>
+				<el-table-column resizable prop="status" label="部门状态" show-overflow-tooltip>
 					<template #default="scope">
 						<el-tag type="success" v-if="scope.row.status===1">启用</el-tag>
 						<el-tag type="info" v-else>禁用</el-tag>
 					</template>
 				</el-table-column>
-				<el-table-column prop="orderNum" label="排序" show-overflow-tooltip></el-table-column>
-				<el-table-column prop="createdAt" label="创建时间" show-overflow-tooltip></el-table-column>
-				<el-table-column label="操作" width="200">
+				<el-table-column resizable prop="orderNum" label="排序" show-overflow-tooltip></el-table-column>
+				<el-table-column resizable prop="createdAt" label="创建时间" show-overflow-tooltip></el-table-column>
+				<el-table-column resizable label="操作" width="200">
 					<template #default="scope">
 						<el-button size="small" text type="primary" @click="onOpenAddDept(scope.row)">新增</el-button>
 						<el-button size="small" text type="primary" @click="onOpenEditDept(scope.row)">修改</el-button>
@@ -98,7 +98,7 @@ export default defineComponent({
 				loading: false,
 				param: {
 					pageNum: 1,
-					pageSize: 10,
+					pageSize: 20,
           deptName:'',
           status:''
 				},

@@ -2,7 +2,7 @@
 	<el-card shadow="hover" header="表单表格验证">
 		<el-form ref="tableRulesRef" :model="tableData" size="default">
 			<el-table :data="tableData.data" border class="module-table-uncollected">
-				<el-table-column
+				<el-table-column resizable
 					v-for="(item, index) in tableData.header"
 					:key="index"
 					show-overflow-tooltip
