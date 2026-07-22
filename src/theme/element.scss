@@ -237,16 +237,21 @@
 .el-table th,
 .el-table td {
 	border-right: 1px solid var(--el-border-color);
+	border-bottom: 1px solid var(--el-border-color);
+	background-clip: padding-box;
 }
 .el-table th:last-child,
 .el-table td:last-child {
 	border-right: none;
 }
-.el-table tr {
-	border-bottom: 1px solid var(--el-border-color);
-}
-.el-table tr:last-child {
+.el-table tr:last-child td {
 	border-bottom: none;
+}
+.el-table .el-table__body tr:nth-child(odd) {
+	background-color: rgba(248, 249, 250, 0.8);
+}
+.el-table .el-table__body tr:hover {
+	background-color: rgba(240, 243, 245, 0.9) !important;
 }
 
 /* scrollbar
