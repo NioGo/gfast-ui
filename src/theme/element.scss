@@ -228,6 +228,25 @@
 	.el-button.is-text {
 		padding: 0;
 	}
+
+	border: 1px solid var(--el-border-color);
+	border-collapse: collapse;
+	border-radius: 4px;
+	overflow: hidden;
+}
+.el-table th,
+.el-table td {
+	border-right: 1px solid var(--el-border-color);
+}
+.el-table th:last-child,
+.el-table td:last-child {
+	border-right: none;
+}
+.el-table tr {
+	border-bottom: 1px solid var(--el-border-color);
+}
+.el-table tr:last-child {
+	border-bottom: none;
 }
 
 /* scrollbar
