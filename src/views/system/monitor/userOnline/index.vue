@@ -2,27 +2,27 @@
   <div class="system-post-container">
     <el-card shadow="hover">
       <div class="system-user-search mb15">
-        <el-form :model="tableData.param" ref="queryRef" :inline="true">
+        <el-form :model="tableData.param" ref="queryRef" :inline="true" size="small">
           <el-form-item label="登录IP" prop="ipaddr">
-            <el-input size="default" v-model="tableData.param.ipaddr" placeholder="请输入登录IP" class="w-50 m-2" clearable/>
+            <el-input v-model="tableData.param.ipaddr" placeholder="请输入登录IP" style="width: 180px" clearable/>
           </el-form-item>
           <el-form-item label="用户名称" prop="userName">
-            <el-input size="default" v-model="tableData.param.userName" placeholder="请输入登录名称" class="w-50 m-2" clearable/>
+            <el-input v-model="tableData.param.userName" placeholder="请输入登录名称" style="width: 180px" clearable/>
           </el-form-item>
           <el-form-item>
-            <el-button size="default" type="primary" class="ml10" @click="getList">
+            <el-button type="primary" class="ml10" @click="getList">
               <el-icon>
                 <ele-Search />
               </el-icon>
               查询
             </el-button>
-            <el-button size="default" @click="resetQuery(queryRef)">
+            <el-button @click="resetQuery(queryRef)">
               <el-icon>
                 <ele-Refresh />
               </el-icon>
               重置
             </el-button>
-            <el-button size="default" type="danger" class="ml10" @click="onRowDel(null)">
+            <el-button type="danger" class="ml10" @click="onRowDel(null)">
               <el-icon>
                 <ele-Delete />
               </el-icon>

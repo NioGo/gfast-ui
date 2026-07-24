@@ -5,7 +5,7 @@
         <el-card shadow="hover">
           <el-aside>
             <el-scrollbar>
-              <el-input :prefix-icon="search" v-model="filterText" placeholder="请输入部门名称" clearable size="default" style="width: 80%;"/>
+              <el-input :prefix-icon="search" v-model="filterText" placeholder="请输入部门名称" clearable size="small" style="width: 80%;"/>
               <el-tree
                   ref="treeRef"
                   class="filter-tree"
@@ -22,14 +22,13 @@
       <el-col :span="20">
         <el-card shadow="hover">
           <div class="system-user-search mb15">
-            <el-form :model="tableData.param" ref="queryRef" :inline="true" label-width="68px">
+            <el-form :model="tableData.param" ref="queryRef" :inline="true" label-width="68px" size="small">
               <el-form-item label="关键字" prop="keyWords">
                 <el-input
                     v-model="tableData.param.keyWords"
                     placeholder="请输入用户账号或姓名"
                     clearable
-                    size="default"
-                    style="width: 240px"
+                    style="width: 180px"
                     @keyup.enter.native="userList"
                 />
               </el-form-item>
@@ -38,18 +37,16 @@
                     v-model="tableData.param.mobile"
                     placeholder="请输入手机号码"
                     clearable
-                    size="default"
-                    style="width: 240px"
+                    style="width: 180px"
                     @keyup.enter.native="userList"
                 />
               </el-form-item>
-              <el-form-item label="状态" prop="status" style="width: 200px;">
+              <el-form-item label="状态" prop="status">
                 <el-select
                     v-model="tableData.param.status"
-                    placeholder="用户状态"
+                    placeholder="请选择"
                     clearable
-                    size="default"
-                    style="width: 240px"
+                    style="width: 180px"
                 >
                   <el-option label="启用"  :value="1"/>
                   <el-option label="禁用"  :value="0"/>
@@ -58,7 +55,6 @@
               <el-form-item label="创建时间" prop="dateRange">
                 <el-date-picker
                     v-model="tableData.param.dateRange"
-                    size="default"
                     style="width: 240px"
                     value-format="YYYY-MM-DD"
                     type="daterange"
@@ -68,25 +64,25 @@
                 ></el-date-picker>
               </el-form-item>
               <el-form-item>
-                <el-button size="default" type="primary" class="ml10" @click="userList">
+                <el-button type="primary" class="ml10" @click="userList">
                   <el-icon>
                     <ele-Search />
                   </el-icon>
                   查询
                 </el-button>
-                <el-button size="default" @click="resetQuery(queryRef)">
+                <el-button @click="resetQuery(queryRef)">
                   <el-icon>
                     <ele-Refresh />
                   </el-icon>
                   重置
                 </el-button>
-                <el-button size="default" type="success" class="ml10" @click="onOpenAddUser">
+                <el-button type="success" class="ml10" @click="onOpenAddUser">
                   <el-icon>
                     <ele-FolderAdd />
                   </el-icon>
                   新增用户
                 </el-button>
-                <el-button size="default" type="danger" class="ml10" @click="onRowDel(null)">
+                <el-button type="danger" class="ml10" @click="onRowDel(null)">
                   <el-icon>
                     <ele-Delete />
                   </el-icon>

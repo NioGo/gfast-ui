@@ -2,14 +2,13 @@
 	<div class="system-menu-container">
 		<el-card shadow="hover">
 			<div class="system-menu-search mb15">
-        <el-form :inline="true">
+        <el-form :inline="true" size="small">
           <el-form-item label="菜单名称">
             <el-input
                 v-model="queryParams.title"
                 placeholder="请输入菜单名称"
                 clearable
-                class="w-50 m-2"
-                size="default"
+                style="width: 180px"
             />
           </el-form-item>
           <el-form-item label="组件路径">
@@ -17,18 +16,17 @@
                 v-model="queryParams.component"
                 placeholder="请输入组件路径"
                 clearable
-                size="default"
-                class="w-50 m-2"
+                style="width: 180px"
             />
           </el-form-item>
           <el-form-item>
-            <el-button size="default" type="primary" class="ml10" @click="handleQuery">
+            <el-button type="primary" class="ml10" @click="handleQuery">
               <el-icon>
                 <ele-Search />
               </el-icon>
               查询
             </el-button>
-            <el-button size="default" type="success" class="ml10" @click="onOpenAddMenu(null)" v-auth="'api/v1/system/menu/add'">
+            <el-button type="success" class="ml10" @click="onOpenAddMenu(null)" v-auth="'api/v1/system/menu/add'">
               <el-icon>
                 <ele-FolderAdd />
               </el-icon>

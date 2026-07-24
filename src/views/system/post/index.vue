@@ -2,33 +2,33 @@
 	<div class="system-post-container">
 		<el-card shadow="hover">
 			<div class="system-user-search mb15">
-        <el-form :inline="true">
+        <el-form :inline="true" size="small">
           <el-form-item label="岗位名称">
-            <el-input size="default" v-model="tableData.param.postName" placeholder="请输入岗位名称" class="w-50 m-2" clearable/>
+            <el-input v-model="tableData.param.postName" placeholder="请输入岗位名称" style="width: 180px" clearable/>
           </el-form-item>
           <el-form-item label="岗位编码">
-            <el-input size="default" v-model="tableData.param.postCode" placeholder="请输入岗位编码" class="w-50 m-2" clearable/>
+            <el-input v-model="tableData.param.postCode" placeholder="请输入岗位编码" style="width: 180px" clearable/>
           </el-form-item>
           <el-form-item label="状态">
-            <el-select size="default" placeholder="请选择状态" class="w-50 m-2" v-model="tableData.param.status" clearable>
+            <el-select placeholder="请选择" style="width: 180px" v-model="tableData.param.status" clearable>
               <el-option label="启用"  value="1" />
               <el-option label="禁用"  value="0" />
             </el-select>
           </el-form-item>
           <el-form-item>
-            <el-button size="default" type="primary" class="ml10" @click="postList">
+            <el-button type="primary" class="ml10" @click="postList">
               <el-icon>
                 <ele-Search />
               </el-icon>
               查询
             </el-button>
-            <el-button size="default" type="success" class="ml10" @click="onOpenAddPost">
+            <el-button type="success" class="ml10" @click="onOpenAddPost">
               <el-icon>
                 <ele-FolderAdd />
               </el-icon>
               新增岗位
             </el-button>
-            <el-button size="default" type="danger" class="ml10" @click="onRowDel(null)">
+            <el-button type="danger" class="ml10" @click="onRowDel(null)">
               <el-icon>
                 <ele-Delete />
               </el-icon>

@@ -2,13 +2,13 @@
   <div class="system-dic-container">
     <el-card shadow="hover">
       <div class="system-user-search mb15">
-        <el-form :model="tableData.param" ref="queryRef" :inline="true" label-width="68px">
+        <el-form :model="tableData.param" ref="queryRef" :inline="true" label-width="68px" size="small">
           <el-form-item label="参数名称" prop="configName">
             <el-input
                 v-model="tableData.param.configName"
                 placeholder="请输入参数名称"
                 clearable
-                size="default"
+                style="width: 180px"
                 @keyup.enter.native="dataList"
             />
           </el-form-item>
@@ -17,17 +17,16 @@
                 v-model="tableData.param.configKey"
                 placeholder="请输入参数键名"
                 clearable
-                size="default"
+                style="width: 180px"
                 @keyup.enter.native="dataList"
             />
           </el-form-item>
-          <el-form-item label="系统内置" prop="configType" style="width: 200px;">
+          <el-form-item label="系统内置" prop="configType">
             <el-select
                 v-model="tableData.param.configType"
-                placeholder="系统内置"
+                placeholder="请选择"
                 clearable
-                size="default"
-                style="width: 240px"
+                style="width: 180px"
             >
               <el-option v-for="dict in sys_yes_no"
                  :key="dict.value"
@@ -38,7 +37,6 @@
           <el-form-item label="创建时间" prop="dateRange">
             <el-date-picker
                 v-model="tableData.param.dateRange"
-                size="default"
                 style="width: 240px"
                 value-format="YYYY-MM-DD"
                 type="daterange"
@@ -48,25 +46,25 @@
             ></el-date-picker>
           </el-form-item>
           <el-form-item>
-            <el-button size="default" type="primary" class="ml10" @click="dataList">
+            <el-button type="primary" class="ml10" @click="dataList">
               <el-icon>
                 <ele-Search />
               </el-icon>
               查询
             </el-button>
-            <el-button size="default" @click="resetQuery(queryRef)">
+            <el-button @click="resetQuery(queryRef)">
               <el-icon>
                 <ele-Refresh />
               </el-icon>
               重置
             </el-button>
-            <el-button size="default" type="success" class="ml10" @click="onOpenAddDic">
+            <el-button type="success" class="ml10" @click="onOpenAddDic">
               <el-icon>
                 <ele-FolderAdd />
               </el-icon>
               新增参数
             </el-button>
-            <el-button size="default" type="danger" class="ml10" @click="onRowDel(null)">
+            <el-button type="danger" class="ml10" @click="onRowDel(null)">
               <el-icon>
                 <ele-Delete />
               </el-icon>

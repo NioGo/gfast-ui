@@ -2,14 +2,13 @@
   <div class="system-dic-container">
     <el-card shadow="hover">
       <div class="system-user-search mb15">
-        <el-form :model="tableData.param" ref="queryRef" :inline="true" label-width="68px">
+        <el-form :model="tableData.param" ref="queryRef" :inline="true" label-width="68px" size="small">
           <el-form-item label="登录IP" prop="ipaddr">
             <el-input
                 v-model="tableData.param.ipaddr"
                 placeholder="请输入登录地址"
                 clearable
-                style="width: 180px;"
-                size="default"
+                style="width: 180px"
                 @keyup.enter.native="dataList"
             />
           </el-form-item>
@@ -19,8 +18,7 @@
                 v-model="tableData.param.loginLocation"
                 placeholder="请输入登录地点"
                 clearable
-                style="width: 180px;"
-                size="default"
+                style="width: 180px"
                 @keyup.enter.native="dataList"
             />
           </el-form-item>
@@ -30,8 +28,7 @@
                 v-model="tableData.param.userName"
                 placeholder="请输入用户名称"
                 clearable
-                style="width: 180px;"
-                size="default"
+                style="width: 180px"
                 @keyup.enter.native="dataList"
             />
           </el-form-item>
@@ -39,9 +36,8 @@
           <el-form-item label="状态" prop="status">
             <el-select
                 v-model="tableData.param.status"
-                placeholder="登录状态"
+                placeholder="请选择"
                 clearable
-                size="default"
                 style="width: 180px"
             >
               <el-option
@@ -56,7 +52,6 @@
           <el-form-item label="登录时间" prop="dateRange">
             <el-date-picker
                 v-model="tableData.param.dateRange"
-                size="default"
                 style="width: 240px"
                 value-format="YYYY-MM-DD"
                 type="daterange"
@@ -66,25 +61,25 @@
             ></el-date-picker>
           </el-form-item>
           <el-form-item>
-            <el-button size="default" type="primary" class="ml10" @click="dataList">
+            <el-button type="primary" class="ml10" @click="dataList">
               <el-icon>
                 <ele-Search />
               </el-icon>
               查询
             </el-button>
-            <el-button size="default" @click="resetQuery(queryRef)">
+            <el-button @click="resetQuery(queryRef)">
               <el-icon>
                 <ele-Refresh />
               </el-icon>
               重置
             </el-button>
-            <el-button size="default" type="danger" class="ml10" @click="onRowDel(null)">
+            <el-button type="danger" class="ml10" @click="onRowDel(null)">
               <el-icon>
                 <ele-Delete />
               </el-icon>
               删除日志
             </el-button>
-            <el-button size="default" type="danger" class="ml10" @click="onRowClear()">
+            <el-button type="danger" class="ml10" @click="onRowClear()">
               <el-icon>
                 <ele-Delete />
               </el-icon>
